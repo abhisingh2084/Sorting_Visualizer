@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+
+    <header >
+        <nav style="border-bottom-left-radius: 50px; border-bottom: 8px solid rgb(255, 102, 102);">
+            <div class="array-inputs">
+                <p>Size of the array:</p>
+                <input id="a_size" type="range" min=20 max=150 step=1 value=80>
+                <p>Speed of algo:</p>
+                <input id="a_speed" type="range" min=1 max=5 step=1 value=4>
+                <button id="a_generate">Generate New Array!</button>
+            </div>
+
+            <div class="header_right">
+                <div class = "title">
+                    <p>Abhishek kumar</p>
+                    <p>11911931</p>
+                </div>
+                <p class="nav-heading">Sorting visualizer</p>
+
+                    <div class="algos" style="display: flex; flex-direction: row; justify-content: space-around;">
+                        <button style="text-transform: uppercase;"  class="btn-grad2 "  >Bubble</button>
+                        <button style="text-transform: uppercase;" class="btn-grad2" >Insertion</button>
+                        <button style="text-transform: uppercase;" class="btn-grad2" >Selection</button>
+                        <button style="text-transform: uppercase;" class="btn-grad2" >Quick</button>
+                        <button style="text-transform: uppercase;" class="btn-grad2" >Merge</button>
+                        <button style="text-transform: uppercase;" class="btn-grad2">Heap</button>
+                        
+                    </div>
+                    
+        
+            </div>
+           
+        </nav>
+    </header>
+
+    <section>
+
+        <div id="Info_Cont1">
+
+        </div>
+
+        <div id="array_container">
+            
+        </div>
+
+        <div id="Info_Cont2">
+
+        </div>
+
+    </section>
+
+    <div class="bottom-container">
+        <a href="https://github.com/abhisingh2084"><i class=" icon fab fa-github"></i></a> 
+        <a href="https://www.linkedin.com/in/abhishek-kumar-0b2b87192/"><i class=" icon fab fa-linkedin"></i></a>
+        <a href="abhisingh2084@gmail.com"><i class=" icon far fa-envelope"></i></a>
+        <p class="copyright">&copy; All Rights Reserved by Abhishek</p>
+    </div>
+     
+
+    
+   
+
+    <script>
+        document.getElementById("a_size").oninput = function() {
+        var value = (this.value-this.min)/(this.max-this.min)*100
+        this.style.background = 'linear-gradient(to right, #ff8080 0%, #ff8080 ' + value + '%, #fff ' + value + '%, white 100%)'
+        };
+        document.getElementById("a_speed").oninput = function() {
+        var value = (this.value-this.min)/(this.max-this.min)*100
+        this.style.background = 'linear-gradient(to right, #ff8080 0%, #ff8080 ' + value + '%, #fff ' + value + '%, white 100%)'
+        };
+    </script>
+
+    <script src="./scripts/main.js"></script>   <!--This should be at the end of body and should be loaded before sorts.js-->
+    <script src="./scripts/visualizations.js"></script>  <!--This should be loaded after main.js-->
+
+    <script src="./scripts/bubble_sort.js"></script>
+    <script src="./scripts/selection_sort.js"></script>
+    <script src="./scripts/insertion_sort.js"></script>
+    <script src="./scripts/merge_sort.js"></script>
+    <script src="./scripts/quick_sort.js"></script>
+    <script src="./scripts/heap_sort.js"></script>
+</body>
+
+
+
+</html>
